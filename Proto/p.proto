@@ -1,0 +1,36 @@
+message MClient {
+    required int32 type = 1;
+    optional string name = 2;
+    optional int32 key = 3;
+    optional bool keyFire = 4;
+    optional bool keyShift = 5;
+}
+
+message MTank {
+    required int32 posX = 1;
+    required int32 posY = 2;
+    required int32 angle = 3;
+    required int32 type = 4;
+    required int32 team = 5;
+    required int32 animationProgress = 6;
+}
+
+message MWall {
+    required int32 posX = 1;
+    required int32 posY = 2;
+    required int32 type = 3;
+}
+
+message MBullet {
+    required int32 posX = 1;
+    required int32 posY = 2;
+    required int32 angle = 3;
+    required int32 animationProgress = 4;
+}
+
+message MServer {
+    required MTank PlayerTank = 1;
+    repeated MTank TanksList = 2;
+    repeated MWall WallList = 3;
+    repeated MBullet BuleltList = 4;
+}
